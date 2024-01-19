@@ -3,6 +3,7 @@
 namespace App;
 
 use \PDO;
+use Exception;
 
 class Database
 {
@@ -66,18 +67,54 @@ class Database
 
 
 
-    public function prepare($statement, $attributes, $class_name, $one = false)
-    {
-        $req = $this->getPDO()->prepare($statement);
-        $req->execute($attributes);
-        $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
+    // public function prepare($statement, $attributes, $class_name, $one = false)
+    // {
+    //     $req = $this->getPDO()->prepare($statement);
+    //     $req->execute($attributes);
+    //     $req->setFetchMode(PDO::FETCH_CLASS, $class_name);
 
-        if ($one) {
-            $datas = $req->fetch();
-        } else {
-            $datas = $req->fetchAll();
+    //     if ($one) {
+    //         $datas = $req->fetch();
+    //     } else {
+    //         $datas = $req->fetchAll();
+    //     }
+
+    //     return $datas;
+    // }
+    // function prepare($statement, $attributes)
+    // {
+    //     $pdo = $this->getPDO();
+    //     $stmt = $pdo->prepare($statement);
+    //     $stmt->execute($attributes);
+
+    //     if (preg_match("/LIMIT 1$/i", $statement)) {
+    //         // Requête de fetch unique
+    //         return $stmt->fetch(PDO::FETCH_ASSOC);
+    //     }
+
+    //     $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    //     return $stmt->fetchAll();
+    // }
+
+    function prepare($statement, $attributes)
+    {
+        $pdo = $this->getPDO();
+
+        $stmt = $pdo->prepare($statement);
+
+        if ($stmt === false) {
+            throw new Exception("Failed to prepare statement: " . $statement);
         }
 
-        return $datas;
+        $stmt->execute($attributes);
+
+        if (preg_match("/LIMIT 1$/i", $statement)) {
+            // Requête de fetch unique  
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        return $stmt;
     }
 }

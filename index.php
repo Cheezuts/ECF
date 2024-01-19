@@ -65,19 +65,19 @@
 
                 $functions = new Functions();
                 $services = $functions->getItems($db, 'services');
-                foreach ($services as $services) {
+                foreach ($services as $service) {
 
                     echo '<div class="row">';
 
                     echo '<div class="col-md-4">';
 
                     echo '<p>';
-                    echo $services['serv_titre'];
+                    echo $service['serv_titre'];
                     echo '</p>';
 
-                    echo '<img class="img-responsive center-block" src="', $services['serv_image'], '" alt="">';
+                    echo '<img class="img-responsive center-block" src="', $service['serv_image'], '" alt="">';
 
-                    echo '<p>', $services['serv_contenu'], '</p>';
+                    echo nl2br($service['serv_contenu']);
 
                     echo '</div>';
 
