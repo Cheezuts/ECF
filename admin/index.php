@@ -5,7 +5,6 @@
     <!-- Navigation -->
     <?php include "includes/admin_navigation.php"; ?>
 
-    // Vérification du message d'avertissement
 
     <div id="page-wrapper">
 
@@ -155,6 +154,10 @@
             </div>
 
             <!-- compteur des commentaires publier -->
+            <!-- affichage table articles colonne id titre image et texte  -->
+
+
+
 
             <!-- /.row -->
             <div class="row">

@@ -55,7 +55,37 @@
             <img class="img-responsive center-block" src="/" alt="">
 
             <hr>
-            <p class="text-center"></p>
+            <p class="well">
+
+                <?php
+
+
+                use App\Database;
+                use App\Functions;
+
+                $functions = new Functions();
+                $services = $functions->getItems($db, 'services');
+                foreach ($services as $services) {
+
+                    echo '<div class="row">';
+
+                    echo '<div class="col-md-4">';
+
+                    echo '<p>';
+                    echo $services['serv_titre'];
+                    echo '</p>';
+
+                    echo '<img class="img-responsive center-block" src="', $services['serv_image'], '" alt="">';
+
+                    echo '<p>', $services['serv_contenu'], '</p>';
+
+                    echo '</div>';
+
+                    echo '</div>';
+                }
+                ?>
+
+            </p>
             <!-- <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a> -->
             <hr>
 

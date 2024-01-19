@@ -1,10 +1,10 @@
 <div class="mb-footer"></div>
 
 <footer class="footer fixed-footer">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-12">
                 <div class="text-center">
                     <p>Suivez-nous sur les réseaux sociaux :</p>
                 </div>
@@ -20,7 +20,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2 col-12"></div>
             <div class="col-md-1 text-right">
                 <a href="#" class="back-to-top fa-2x">
                     <i class="fa fa-arrow-up"></i>
@@ -40,21 +40,3 @@
 </body>
 
 </html>
-
-
-<style>
-    /*
-font-family: 'Barlow', sans-serif;
-font-family: 'Rajdhani', sans-serif; 
-*/
-
-    /* Color palette:
-Rouge foncé : #d92332
-Rouge clair : #d94350
-Saumon      : #d9777f
-Noir        : #262526
-Blanc       : #F2F2F2 
-*/
-
-    /* Titre principal */
-</style>

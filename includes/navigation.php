@@ -3,7 +3,7 @@
 
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php"><i class="fas fa-home"></i></a>
+            <a class="navbar-brand" href="index.php"><i class="fas fa-home nav-icon"></i></a>
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>

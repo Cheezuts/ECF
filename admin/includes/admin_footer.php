@@ -10,7 +10,6 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<p>j'adore les cailloux</p>
 
 </body>
 
